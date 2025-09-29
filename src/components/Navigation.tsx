@@ -8,11 +8,13 @@ import {
   BarChart3, 
   Award,
   Menu,
-  X
+  X,
+  Sprout
 } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', href: '/', icon: Home },
+  { name: 'Crop Recommendations', href: '/crop-recommendation', icon: Sprout },
   { name: 'Smart Solutions', href: '/features', icon: Activity },
   { name: 'Farm Map', href: '/map', icon: Map },
   { name: 'IoT Dashboard', href: '/dashboard', icon: BarChart3 },
