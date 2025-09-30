@@ -26,7 +26,9 @@ export const HeroSection = () => {
           loop 
           muted 
           playsInline
+          preload="auto"
           className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover"
+          style={{ filter: 'none' }}
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
