@@ -27,12 +27,12 @@ export const HeroSection = () => {
           muted 
           playsInline
           preload="auto"
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover brightness-110"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
-        <div className="absolute inset-0 bg-background/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/40" />
+        <div className="absolute inset-0 bg-background/5" />
       </div>
 
       {/* Particle System */}
@@ -48,20 +48,20 @@ export const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight drop-shadow-2xl"
-              style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}
+              className="text-6xl lg:text-7xl font-heading font-light mb-6 leading-tight drop-shadow-2xl text-white"
+              style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.6)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Smart <span className="text-gradient drop-shadow-2xl">Agriculture</span>
+              Smart <span className="text-gradient font-medium drop-shadow-2xl">Agriculture</span>
               <br />
-              for the Future
+              <span className="font-extralight">for the Future</span>
             </motion.h1>
             
             <motion.p 
-              className="text-xl text-foreground/95 mb-8 max-w-lg drop-shadow-lg font-medium"
-              style={{ textShadow: '0 2px 12px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.8)' }}
+              className="text-xl text-white/95 mb-8 max-w-lg drop-shadow-lg font-light tracking-wide"
+              style={{ textShadow: '0 2px 12px rgba(0,0,0,0.4), 0 1px 4px rgba(0,0,0,0.5)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -119,7 +119,7 @@ export const HeroSection = () => {
                       className="w-full h-full object-contain filter drop-shadow-lg"
                     />
                   </div>
-                  <span className="text-sm font-medium text-foreground/90 drop-shadow-md" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>
+                  <span className="text-sm font-light text-white/90 drop-shadow-md tracking-wide" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
                     {item.label}
                   </span>
                 </motion.div>

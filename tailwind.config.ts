@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        primary: ['Inter', 'sans-serif'],
-        heading: ['Sora', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Poppins', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
