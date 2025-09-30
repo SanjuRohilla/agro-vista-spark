@@ -28,11 +28,11 @@ export const HeroSection = () => {
           playsInline
           preload="auto"
           className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover"
-          style={{ filter: 'none' }}
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/10 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+        <div className="absolute inset-0 bg-background/10" />
       </div>
 
       {/* Particle System */}
@@ -48,18 +48,20 @@ export const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight"
+              className="text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight drop-shadow-2xl"
+              style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Smart <span className="text-gradient">Agriculture</span>
+              Smart <span className="text-gradient drop-shadow-2xl">Agriculture</span>
               <br />
               for the Future
             </motion.h1>
             
             <motion.p 
-              className="text-xl text-muted-foreground mb-8 max-w-lg"
+              className="text-xl text-foreground/95 mb-8 max-w-lg drop-shadow-lg font-medium"
+              style={{ textShadow: '0 2px 12px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.8)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -117,7 +119,7 @@ export const HeroSection = () => {
                       className="w-full h-full object-contain filter drop-shadow-lg"
                     />
                   </div>
-                  <span className="text-sm font-medium text-muted-foreground">
+                  <span className="text-sm font-medium text-foreground/90 drop-shadow-md" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>
                     {item.label}
                   </span>
                 </motion.div>
