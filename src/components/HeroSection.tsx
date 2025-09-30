@@ -10,7 +10,7 @@ import {
   ChevronDown,
   Play
 } from 'lucide-react';
-import heroImage from '@/assets/farm-hero-bg.jpg';
+import heroVideo from '@/assets/farm-hero-video.mp4';
 import aiIcon from '@/assets/ai-icon.png';
 import iotIcon from '@/assets/iot-icon.png';
 import biosecurityIcon from '@/assets/biosecurity-icon.png';
@@ -19,11 +19,17 @@ import { ParticleSystem } from './ParticleSystem';
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      {/* Background Video */}
+      <div className="absolute inset-0">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/10 to-background/30" />
       </div>
 
