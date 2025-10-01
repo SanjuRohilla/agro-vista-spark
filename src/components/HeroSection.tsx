@@ -27,12 +27,11 @@ export const HeroSection = () => {
           muted 
           playsInline
           preload="auto"
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover brightness-110"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover brightness-[1.15]"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/40" />
-        <div className="absolute inset-0 bg-background/5" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30" />
       </div>
 
       {/* Particle System */}
@@ -48,8 +47,8 @@ export const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-6xl lg:text-7xl font-heading font-light mb-6 leading-tight drop-shadow-2xl text-white"
-              style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.6)' }}
+              className="text-6xl lg:text-7xl font-heading font-light mb-6 leading-tight drop-shadow-2xl text-slate-800 dark:text-white"
+              style={{ textShadow: '0 2px 8px rgba(255,255,255,0.8), 0 4px 16px rgba(0,0,0,0.3)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -60,8 +59,8 @@ export const HeroSection = () => {
             </motion.h1>
             
             <motion.p 
-              className="text-xl text-white/95 mb-8 max-w-lg drop-shadow-lg font-light tracking-wide"
-              style={{ textShadow: '0 2px 12px rgba(0,0,0,0.4), 0 1px 4px rgba(0,0,0,0.5)' }}
+              className="text-xl text-slate-700 dark:text-white/95 mb-8 max-w-lg drop-shadow-lg font-light tracking-wide"
+              style={{ textShadow: '0 1px 4px rgba(255,255,255,0.6), 0 2px 8px rgba(0,0,0,0.2)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -87,7 +86,7 @@ export const HeroSection = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="glass-card border-glass-border text-foreground hover:bg-glass-strong"
+                className="glass-card border-slate-300 dark:border-glass-border text-slate-800 dark:text-foreground hover:bg-white/50 dark:hover:bg-glass-strong backdrop-blur-lg"
               >
                 <Play className="mr-2 h-4 w-4" />
                 Watch Demo
@@ -119,7 +118,7 @@ export const HeroSection = () => {
                       className="w-full h-full object-contain filter drop-shadow-lg"
                     />
                   </div>
-                  <span className="text-sm font-light text-white/90 drop-shadow-md tracking-wide" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
+                  <span className="text-sm font-light text-slate-700 dark:text-white/90 drop-shadow-md tracking-wide" style={{ textShadow: '0 1px 4px rgba(255,255,255,0.6), 0 1px 6px rgba(0,0,0,0.2)' }}>
                     {item.label}
                   </span>
                 </motion.div>
