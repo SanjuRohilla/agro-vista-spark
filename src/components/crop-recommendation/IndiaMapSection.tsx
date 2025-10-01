@@ -4,6 +4,7 @@ import { Search, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { LocationData } from '@/pages/CropRecommendation';
+import indiaMap from '@/assets/india-agricultural-map.png';
 
 interface IndiaMapSectionProps {
   onLocationSelect: (location: LocationData) => void;
@@ -113,52 +114,28 @@ export const IndiaMapSection: React.FC<IndiaMapSectionProps> = ({
           </div>
 
           {/* Interactive India Map */}
-          <div className="relative aspect-[4/3] bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 rounded-2xl border border-glass-border overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/20" />
-            
-            {/* Accurate India Map SVG */}
-            <div className="relative w-full h-full flex items-center justify-center p-8">
-              <motion.div
-                className="w-full max-w-lg opacity-30"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 0.4 }}
-                transition={{ duration: 1, delay: 0.5 }}
-              >
-                <svg viewBox="0 0 500 600" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
-                  {/* More accurate India map outline */}
-                  <path
-                    d="M 220 40 L 240 35 L 260 40 L 280 50 L 300 65 L 310 80 L 318 95 L 320 110 L 318 125 L 315 140 L 310 155 L 305 170 L 298 185 L 290 200 L 285 215 L 280 230 L 275 245 L 270 260 L 268 275 L 265 290 L 263 305 L 260 320 L 258 335 L 255 350 L 252 365 L 248 380 L 243 395 L 238 410 L 232 425 L 225 440 L 218 455 L 210 470 L 200 485 L 188 495 L 175 500 L 160 503 L 145 500 L 132 495 L 120 488 L 110 478 L 102 465 L 98 450 L 95 435 L 93 420 L 92 405 L 90 390 L 88 375 L 85 360 L 82 345 L 78 330 L 73 315 L 68 300 L 65 285 L 63 270 L 62 255 L 60 240 L 58 225 L 55 210 L 52 195 L 50 180 L 48 165 L 47 150 L 47 135 L 48 120 L 50 105 L 55 90 L 60 75 L 68 62 L 78 52 L 90 45 L 105 40 L 120 38 L 135 37 L 150 37 L 165 38 L 180 40 L 195 40 L 210 40 Z M 180 520 L 185 530 L 188 545 L 188 560 L 185 575 L 180 585 L 170 590 L 155 590 L 145 585 L 140 575 L 138 560 L 140 545 L 145 530 L 155 520 L 165 518 Z"
-                    fill="currentColor"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    className="text-primary/40 drop-shadow-lg"
-                  />
-                  {/* State markers */}
-                  {selectedLocation && (
-                    <motion.circle
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ type: "spring", stiffness: 200 }}
-                      cx="200"
-                      cy="250"
-                      r="8"
-                      fill="hsl(var(--primary))"
-                      className="drop-shadow-lg"
-                    />
-                  )}
-                </svg>
-              </motion.div>
+          <div className="relative aspect-[4/3] bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 rounded-2xl border border-glass-border overflow-hidden">
+            {/* Agricultural Map Image */}
+            <div className="relative w-full h-full flex items-center justify-center p-4">
+              <motion.img
+                src={indiaMap}
+                alt="India's Agricultural Landscape"
+                className="w-full h-full object-contain"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              />
               
               {selectedLocation && (
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="absolute inset-0 flex items-center justify-center"
+                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
                 >
-                  <div className="glass-card px-4 py-2 rounded-full border border-primary/30">
+                  <div className="glass-card px-6 py-3 rounded-full border-2 border-primary/50 shadow-lg backdrop-blur-md bg-white/90 dark:bg-black/80">
                     <div className="flex items-center gap-2 text-primary">
-                      <MapPin className="w-4 h-4" />
-                      <span className="font-medium">{selectedLocation.state}</span>
+                      <MapPin className="w-5 h-5" />
+                      <span className="font-semibold text-lg">{selectedLocation.state}</span>
                     </div>
                   </div>
                 </motion.div>
